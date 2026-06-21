@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Father's Day - Honoring Lala Lajpat Rai Ji</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            overflow-x: hidden;
+            position: relative;
+            background:
+                radial-gradient(circle at top, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.75) 35%, rgba(19, 136, 8, 0.18) 70%),
+                linear-gradient(180deg, #FF9933 0%, #FFFFFF 35%, #138808 70%);
+        }
+
+        .glow {
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 153, 51, 0.24), rgba(255, 153, 51, 0) 70%);
+            filter: blur(10px);
+            animation: pulse 6s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .glow.two {
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(19, 136, 8, 0.18), rgba(19, 136, 8, 0) 70%);
+            bottom: 5%;
+            right: 5%;
+            animation-delay: 1.5s;
+        }
+
+        .flag-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:
+                repeating-linear-gradient(90deg,
+                    transparent 0%,
+                    transparent 50%,
+                    rgba(255, 153, 51, 0.08) 50%,
+                    rgba(255, 153, 51, 0.08) 100%),
+                repeating-linear-gradient(0deg,
+                    transparent 0%,
+                    transparent 50%,
+                    rgba(19, 136, 8, 0.08) 50%,
+                    rgba(19, 136, 8, 0.08) 100%);
+            background-size: 100px 100px;
+            opacity: 0.35;
+            z-index: 0;
+        }
+
+        .symbols {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .symbol {
+            position: absolute;
+            color: rgba(139, 69, 0, 0.28);
+            font-size: 30px;
+            animation: float 8s infinite ease-in;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.45;
+            }
+
+            90% {
+                opacity: 0.45;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.85;
+            }
+
+            50% {
+                transform: scale(1.08);
+                opacity: 1;
+            }
+        }
+
+        .page {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 28px;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+            flex-wrap: nowrap;
+        }
+
+        .side-box {
+            width: 260px;
+            min-width: 260px;
+            height: 520px;
+            border-radius: 28px;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+            background: rgba(255, 255, 255, 0.22);
+            backdrop-filter: blur(6px);
+            position: relative;
+        }
+
+        .side-box::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.18), transparent 40%);
+            pointer-events: none;
+        }
+
+        .side-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            padding: 70px 50px;
+            border-radius: 35px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+            width: 720px;
+            max-width: 720px;
+            z-index: 10;
+            border: 2px solid rgba(255, 255, 255, 0.55);
+            overflow: hidden;
+            background-image: url('lala_ji.jpg');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(4px);
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.58)),
+                radial-gradient(circle at top, rgba(255, 153, 51, 0.15), transparent 50%);
+            z-index: 0;
+        }
+
+        .container::after {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            border: 1px solid rgba(19, 136, 8, 0.35);
+            border-radius: 26px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .tricolor-top,
+        .tricolor-bottom {
+            height: 8px;
+            background: linear-gradient(90deg, #FF9933 33%, #FFFFFF 33%, #FFFFFF 66%, #138808 66%);
+            border-radius: 4px;
+        }
+
+        .tricolor-top {
+            margin-bottom: 18px;
+        }
+
+        .tricolor-bottom {
+            margin-top: 20px;
+        }
+
+        .lion-icon {
+            font-size: 92px;
+            color: #FF9933;
+            margin-bottom: 12px;
+            animation: bounce 2s infinite;
+            filter: drop-shadow(0 8px 14px rgba(255, 107, 0, 0.25));
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #1f2d3d;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.55);
+        }
+
+        .happy {
+            color: #FF9933;
+            font-size: 52px;
+        }
+
+        .fathers {
+            color: #8B4500;
+            font-size: 58px;
+            font-weight: 700;
+        }
+
+        .day {
+            color: #138808;
+            font-size: 52px;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: #7b3f00;
+            margin: 18px 0 20px;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .name-box {
+            background: linear-gradient(135deg, rgba(255, 153, 51, 0.96) 0%, rgba(255, 107, 0, 0.96) 100%);
+            color: white;
+            padding: 16px 30px;
+            border-radius: 18px;
+            margin: 18px auto;
+            font-size: 26px;
+            font-weight: 700;
+            display: inline-block;
+            box-shadow: 0 10px 24px rgba(255, 107, 0, 0.28);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+        }
+
+        .title {
+            font-size: 18px;
+            color: #fff;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        .poem-container {
+            background: rgba(255, 248, 240, 0.92);
+            padding: 32px 28px;
+            border-radius: 22px;
+            margin: 28px 0;
+            border-left: 5px solid #FF9933;
+            border-right: 5px solid #138808;
+            box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.55);
+        }
+
+        .poem {
+            font-size: 19px;
+            color: #4d5c6b;
+            line-height: 1.85;
+            font-style: italic;
+            text-align: left;
+            margin: 0;
+        }
+
+        .poem-line {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .poem-highlight {
+            color: #7b3f00;
+            font-weight: 700;
+        }
+
+        .decorative-line {
+            width: 180px;
+            height: 4px;
+            background: linear-gradient(90deg, #FF9933, #FFFFFF, #138808);
+            margin: 24px auto;
+            border-radius: 2px;
+            box-shadow: 0 0 14px rgba(255, 255, 255, 0.35);
+        }
+
+        .message {
+            font-size: 19px;
+            color: #4d5c6b;
+            margin: 22px 0;
+            line-height: 1.6;
+        }
+
+        .quote {
+            background: linear-gradient(135deg, rgba(255, 153, 51, 0.95) 0%, rgba(255, 107, 0, 0.95) 100%);
+            color: white;
+            padding: 25px 32px;
+            border-radius: 18px;
+            margin: 28px 0;
+            font-size: 18px;
+            line-height: 1.6;
+            position: relative;
+            box-shadow: 0 10px 24px rgba(255, 107, 0, 0.28);
+        }
+
+        .quote::before {
+            content: '"';
+            font-size: 68px;
+            position: absolute;
+            top: -24px;
+            left: 14px;
+            color: rgba(255, 255, 255, 0.25);
+        }
+
+        .quote::after {
+            content: '"';
+            font-size: 68px;
+            position: absolute;
+            bottom: -48px;
+            right: 14px;
+            color: rgba(255, 255, 255, 0.25);
+        }
+
+        .signature {
+            font-size: 18px;
+            color: #7b3f00;
+            margin-top: 28px;
+            font-weight: 600;
+        }
+
+        .ashoka-chakra {
+            font-size: 50px;
+            color: #138808;
+            margin: 18px auto;
+            animation: rotate 10s linear infinite;
+            filter: drop-shadow(0 6px 10px rgba(19, 136, 8, 0.18));
+        }
+
+        .logo-box {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 14px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.85);
+            border: 3px solid rgba(255, 153, 51, 0.9);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18), 0 0 18px rgba(255, 153, 51, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            animation: bounce 2s infinite;
+        }
+
+        .logo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 1100px) {
+            .page {
+                flex-direction: column;
+            }
+
+            .side-box {
+                width: min(90vw, 360px);
+                height: 280px;
+            }
+
+            .container {
+                width: min(92vw, 720px);
+            }
+
+            .logo-box {
+                width: 90px;
+                height: 90px;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 48px 24px;
+                margin: 18px;
+                border-radius: 28px;
+                background-position: center top;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .happy,
+            .day {
+                font-size: 38px;
+            }
+
+            .fathers {
+                font-size: 44px;
+            }
+
+            .subtitle {
+                font-size: 17px;
+            }
+
+            .name-box {
+                font-size: 20px;
+                padding: 12px 18px;
+            }
+
+            .poem {
+                font-size: 16px;
+            }
+
+            .lion-icon {
+                font-size: 68px;
+            }
+
+            .ashoka-chakra {
+                font-size: 38px;
+            }
+
+            .message {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flag-pattern"></div>
+    <div class="glow"></div>
+    <div class="glow two"></div>
+    <div class="symbols" id="symbols"></div>
+
+    <div class="page">
+        <div class="side-box">
+            <img src="Lal_Bal_Pal.jpg" alt="Lala Lajpat Rai">
+        </div>
+
+        <div class="container">
+            <div class="tricolor-top"></div>
+
+            <div class="logo-box">
+                <img src="The Numy Hub.png" alt="Numy Hub Logo">
+            </div>
+
+            <h1>
+                <span class="happy">Happy</span><br>
+                <span class="fathers">Father's</span><br>
+                <span class="day">Day</span>
+            </h1>
+
+            <div class="decorative-line"></div>
+
+            <p class="subtitle">Honoring the Fathers Who Built Our Nation</p>
+
+            <div class="name-box">
+                Lala Lajpat Rai Ji
+                <div class="title">Father of India 🇮🇳</div>
+            </div>
+
+            <div class="ashoka-chakra">⚜️</div>
+
+            <div class="poem-container">
+                <p class="poem">
+                    <span class="poem-line"><span class="poem-highlight">A lion's heart, a fearless voice,</span></span>
+                    <span class="poem-line">He stood for truth and made brave choice.</span>
+                    <span class="poem-line">Lala Lajpat Rai, strong and bright,</span>
+                    <span class="poem-line">A guiding flame, a nation's light.</span>
+                    <span class="poem-line"></span>
+                    <span class="poem-line"><span class="poem-highlight">In every father's gentle care,</span></span>
+                    <span class="poem-line">We find the strength that made him dare.</span>
+                    <span class="poem-line">Today we honor, sing, and pray,</span>
+                    <span class="poem-line">For fathers' love on Father's Day.</span>
+                </p>
+            </div>
+
+            <div class="poem-container">
+                <p class="poem">
+                    <span class="poem-line"><span class="poem-highlight">पिता: मेरी ताकत, मेरा अभिमान</span></span>
+                    <span class="poem-line">पिता वह छाया हैं, जो धूप में भी ठंडक देती है,</span>
+                    <span class="poem-line">पिता वह शक्ति हैं, जो हर मुश्किल में हिम्मत देती है।</span>
+                    <span class="poem-line">अपने सपनों को पीछे छोड़कर,</span>
+                    <span class="poem-line">मेरे सपनों को उड़ान देते हैं।</span>
+                    <span class="poem-line">पितृ दिवस पर आपको शत-शत नमन,</span>
+                    <span class="poem-line">आपका प्रेम है जीवन का सबसे सुंदर धन।</span>
+                </p>
+            </div>
+
+            <div class="decorative-line"></div>
+
+            <div class="quote">
+                "A nation becomes strong when its fathers, teachers, and leaders inspire courage, truth, and sacrifice."
+                <br><br>
+                <strong>— Inspired tribute to Lala Lajpat Rai Ji</strong>
+            </div>
+
+            <p class="message">
+                Today we celebrate not just our own fathers,<br>
+                but also the fatherly figures who shaped India's destiny.
+            </p>
+
+            <div class="tricolor-bottom"></div>
+
+            <p class="signature">With deepest respect and gratitude </p>
+            <p>By NUMY HUB </p>
+            <p>Contact = numypie1782@gmail.com</p>
+        </div>
+
+        <div class="side-box">
+            <img src="lala_ji_2.jpg" alt="Lala Lajpat Rai portrait">
+        </div>
+    </div>
+
+    <script>
+        function createSymbols() {
+            const symbolsContainer = document.getElementById('symbols');
+            const symbolCount = 14;
+            for (let i = 0; i < symbolCount; i++) {
+                const symbol = document.createElement('div');
+                symbol.className = 'symbol';
+                symbol.innerHTML = '⚜️';
+                symbol.style.left = Math.random() * 100 + '%';
+                symbol.style.animationDelay = Math.random() * 8 + 's';
+                symbol.style.fontSize = (18 + Math.random() * 28) + 'px';
+                symbolsContainer.appendChild(symbol);
+            }
+        }
+        createSymbols();
+    </script>
+</body>
+
+</html>
